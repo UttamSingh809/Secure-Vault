@@ -1,0 +1,18 @@
+<!-- templates/decrypt.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🔐 Decrypt File</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Enter Password to Decrypt "{{ filename }}"</h2>
+    <form method="post" action="{{ url_for('decrypt_file_route', filename=filename) }}" style="margin: 20px;">
+      <input type="password" name="password" placeholder="Enter your password" required class="input">
+      <button type="submit" class="btn">🔓 Decrypt & Download</button>
+    </form>
+    <a href="{{ url_for('home') }}">← Back to Files</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔐 SecureVault</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Optional: Add favicon if available -->
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔐 SecureVault</h1>
+      <p>Upload files with <strong>end-to-end encryption</strong>. Only you can decrypt them.</p>
+    </header>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Upload Form -->
+    <section class="upload-section">
+      <h3>📤 Upload File</h3>
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="text" name="username" placeholder="Your Name (optional)" class="input">
+        <input type="password" name="password" placeholder="Password (4+ characters)" required class="input">
+        <input type="file" name="file" required class="input">
+        <button type="submit" class="btn">Upload & Encrypt</button>
+      </form>
+    </section>
+
+    <!-- Encrypted Files List -->
+    <section class="files">
+      <h3>💾 Encrypted Files</h3>
+      {% if files %}
+        <ul>
+          {% for f in files %}
+            <li>
+              {{ f }}
+              <a href="/decrypt/{{ f }}" class="download">🔓 Decrypt & Download</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p><em>No files uploaded yet.</em></p>
+      {% endif %}
+    </section>
+
+    <!-- Footer with University Info -->
+    <footer>
+      <p>
+        🔒 <strong>SecureVault</strong> – Encrypted file storage system.<br>
+        Academic Project | Course: TCS 392 – Web Technologies<br>
+        <a href="https://gehu.ac.in" target="_blank" rel="noopener">
+          Graphic Era Hill University, Dehradun, Uttarakhand
+        </a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
