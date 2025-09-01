@@ -1,0 +1,5 @@
+cd "c:\Users\HP\Desktop\Secure Vault\uploads"
+echo. > .gitkeep
+git add uploads/.gitkeep
+git commit -m "Add uploads folder with .gitkeep"
+git push
