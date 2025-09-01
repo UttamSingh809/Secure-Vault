@@ -3,10 +3,10 @@
 > **"Your Files, Your Keys"** — Securely encrypt, store, and share files with zero-knowledge privacy.  
 > Built with ❤️ at **Graphic Era Hill University, Dehradun** for **TCS 392 – Web Technologies**
 
-🌐 **Live Demo**: [https://uttam.pythonanywhere.com](https://uttam.pythonanywhere.com)  
+🌐 **Live Demo**: https://uttam.pythonanywhere.com
 🎓 **University**: [Graphic Era Hill University (GEHU)](https://gehu.ac.in)  
 📍 **Campuses**: Dehradun
-📦 **GitHub Repo**: [github.com/UttamSingh809/Secure-Vault]https://github.com/UttamSingh809/Secure-Vault.git
+📦 **GitHub Repo**: https://github.com/UttamSingh809/Secure-Vault.git
 
 ---
 
